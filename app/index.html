@@ -25,8 +25,19 @@
     </div>
 
     <div class="search-container">
-        <input class="search-request" type="text">
-        <button class="search-button">Search</button>
+        <div class="search-bar">
+	        <input class="search-request" placeholder="Artist, Song, Genre..." type="text">
+	        <button class="search-button">Search</button>
+	    </div>
+	    <div class="radio-set-1">
+	        <input type="radio" name="sort" value="relevancy" class="sort-radio" checked>Relevancy</radio>
+	    	<input type="radio" name="sort" value="playback_count" class="sort-radio">Plays</radio>
+	        <input type="radio" name="sort" value="duration" class="sort-radio">Length</radio>
+	    </div>
+        <div class="radio-set-2">
+	        <input type="radio" name="ascend" value="desc" class="asc-radio" checked>Most</radio>
+	        <input type="radio" name="ascend" value="asc" class="asc-radio">Least</radio>
+	    </div>
     </div>
       <div class="box-container">
 

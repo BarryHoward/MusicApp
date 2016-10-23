@@ -52,18 +52,37 @@ function getResults(){
 function createGrid(data){
 	$(".box-container").html("");
 
-	data = sortData(data, "views");
+	var radios = $(".sort-radio");
+	var radio = radios.filter(function(index){
+		if(radios[index].checked===true){return true}else{return false}
+	});
+
+	var sortString = radio.attr("value");
+
+	radios = $(".asc-radio");
+	var radio = radios.filter(function(index){
+		if(radios[index].checked===true){return true}else{return false}
+	});
+
+	var ascString = radio.attr("value");
+
+	var sortedData = sortData(data, sortString, ascString);
 
 	for (var i=0; i<songNum; i++){
-		var boxHTML = songBox(data[i]);
+		var boxHTML = songBox(sortedData[i]);
 		$(".box-container").append(boxHTML);
 	}
 	$(".box").click(playSong);
 
 }
 
-function sortData (data, sort){
-	_sortBy(data, "duration");
+function sortData (data, sortParam, ascParam){
+	if (sortParam==="relevancy" && ascParam==="asc"){
+		var newData = data.reverse();
+	} else{
+		var newData = _.orderBy(data, sortParam, ascParam);
+	}
+	return newData;
 }
 
 function songBox(song){
