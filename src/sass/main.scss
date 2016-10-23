@@ -2,6 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	font-family: 'Proza Libre', sans-serif;
 }
 
 $body-height: 900px;
@@ -11,6 +12,10 @@ body{
 	background-size: 100% auto;
 	background-position: 0px 100px; 
 	height: 2190px;
+}
+
+audio{
+	width: 380px;
 }
 
 $pc-width: 1254px;
@@ -26,7 +31,7 @@ $search-height: 50px;
 	margin: 0px;
 	position: fixed;
 	z-index:1;
-	background: #11204D;
+	background: black;
 
 	$cs-height: $pc-height - 20px;
 	$margin: ($pc-height - $cs-height ) * 4;
@@ -36,17 +41,81 @@ $search-height: 50px;
 		left: $margin;
 		height: $cs-height;
 		width: $cs-height;
+		border: 2px solid white;
+		box-shadow: 0 0 2em white;
 	}
 
 	.current-song-container{
 		position: absolute;
 		top: ($pc-height - $cs-height ) / 2;
 		right: $margin;
-		color: white;
-		width: $pc-width - $cs-height - $margin - $margin - 40px;
+		width: $pc-width - $cs-height - $margin - $margin - 60px;
 		height: $cs-height;
 		border-radius: 50px;
 		background: black;
+		color: white;
+
+		.current-song-info{
+			// border: 3px solid white;
+			border-radius: 5px;
+			display: inline-block;
+			margin-right: 80px;
+			width: 450px;
+			height: 85%;
+			margin-top: 4px;
+			vertical-align: top;
+			overflow-y: auto;
+			position: relative;
+			// background: white;
+			// color: black;
+
+				.current-song-title{
+					padding: 0px 5px ;
+					font-size: 14pt;
+					white-space: nowrap;
+			  		overflow: hidden;
+			  		text-overflow: ellipsis;
+			  		text-align: center;
+			  		height: 24px;
+				}
+
+				.current-song-description{
+					font-size: 8pt;
+					display: block;
+					position: absolute;
+					left: 5px;
+					top: 30px;
+
+				}
+
+				// .current-song-genre{
+				// 	display: inline-block;
+				// 	position: absolute;
+				// 	left: 5px;
+				// 	width: 180px;
+
+
+				// }
+				// .current-song-count{
+				// 	display: inline-block;
+				// 	position: absolute;
+				// 	right: 5px;
+				// 	width: 180px;
+				// 	text-align: right;
+
+				// }
+
+		}
+
+		.player{
+			margin-top: ($cs-height - 40px) / 2;
+			width: 400px;
+			border-radius:5px;
+			background: white;
+			height:40px;
+			padding: 4px;
+			display: inline-block;
+		}
 	}
 }
 
@@ -54,7 +123,7 @@ $search-height: 50px;
 	height: $search-height;
 	width: 100%;
 	overflow: hidden;
-	background: #224099;
+	background: #11204D;
 	position: fixed;
 	top: $pc-height;
 	z-index: 1;
@@ -193,6 +262,13 @@ $box-width: ($pc-width / $box-per-row) - ($box-margin * 2);
 	}
 
 	.srcURL{
+		display: none;
+	}
+	.genre {
+		display: none;
+	}
+
+	.description{
 		display: none;
 	}
 }

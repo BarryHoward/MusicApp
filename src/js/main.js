@@ -23,9 +23,15 @@ function playSong(event){
 	var songCount = songInfo[2].innerHTML;
 	var songLength = songInfo[3].innerHTML;
 	var srcURL = songInfo[4].innerHTML;
+	var songDescription = songInfo[5].innerHTML;
+	var songGenre = songInfo[6].innerHTML;
 
 	$(".current-song-img").attr("src", songImage);
 	$(".current-song-title").html(songTitle);
+	$(".current-song-description").html(songDescription);
+	// $(".current-song-genre").html(songGenre);
+	// $(".current-song-count").html("Plays: " + songCount);
+
 
 	var sourceHTML = `<source src=${srcURL} class="audio-source"></source>`;
 	$(".audio-player").html(sourceHTML);
@@ -100,8 +106,10 @@ function songBox(song){
 	var lengthHTML = `<span class="length">${length}</span>`;
 
 	var srcHTML = `<p class="srcURL">${song.stream_url}?client_id=${OAUTH_KEY}</p>`;
+	var description = `<p class="description">Description: ${song.description}</p>`;
+	var genre = `<p class="genre">Genre: ${song.genre}</p>`;
 	var divHTML = `<div class="box">`
-	var HTML = divHTML + imageHTML + titleHTML + countHTML + lengthHTML + srcHTML + `</div>`;
+	var HTML = divHTML + imageHTML + titleHTML + countHTML + lengthHTML + srcHTML + description + genre + `</div>`;
 	return HTML;
 }
 

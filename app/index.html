@@ -6,6 +6,7 @@
     <title>Music Player</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
   </head>
 
 
@@ -14,10 +15,13 @@
       <img class="current-song-img" src="https://pedrocadiz13.files.wordpress.com/2014/01/default.png?w=200&h=200">
       <div class="current-song-container">
           <div class="current-song-info">
-            <p class="current-song-title">Choose A song</p>
+            <p class="current-song-title">SONG INFO</p>
+         <!--    <span class="current-song-genre"></span><span class="current-song-count"></span> -->
+            <p class="current-song-description"></p>
+            
           </div>
           <div class="player">
-            <audio class="audio-player" autoplay="true" controls="controls">
+            <audio id="audio-player" class="audio-player" autoplay="true" controls>
               <source class="audio-source"></source>
             </audio>
           </div>
