@@ -1,0 +1,125 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+$body-height: 900px;
+
+body{
+	background-image: url("http://www.hdiphone6wallpapers.net/iphone-6-backgrounds/iphone-6-wallpapers-2/iphone-6-wallpapers-hd-1256pruml-1080x1920.jpg");
+	background-size: 100% auto;
+	background-position: 0px 100px; 
+	height: 2190px;
+}
+
+$pc-width: 1254px;
+$pc-height: 100px;
+$search-height: 50px;
+
+.player-container{
+	width: 100%;
+	height: $pc-height;
+	overflow: hidden;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	background: black;
+	position: fixed;
+	z-index:1;
+
+	$cs-height: $pc-height - 20px;
+	$margin: ($pc-height - $cs-height ) * 4;
+	.current-song-img{
+		position: absolute;
+		top: ($pc-height - $cs-height ) / 2;
+		left: $margin;
+		height: $cs-height;
+		width: $cs-height;
+	}
+
+	.current-song-container{
+		position: absolute;
+		top: ($pc-height - $cs-height ) / 2;
+		right: $margin;
+		color: white;
+		width: $pc-width - $cs-height - $margin - $margin;
+		height: $cs-height;
+		border-radius: 50px;
+	}
+}
+
+.search-container{
+	height: $search-height;
+	width: 100%;
+	overflow: hidden;
+	background: lightgrey;
+	position: fixed;
+	top: $pc-height;
+	z-index: 1;
+}
+
+.box-container{
+	width: 100%;
+	position: absolute;
+	top: $pc-height + $search-height;
+	overflow: hidden;
+	padding: 20px 0px;
+
+
+$box-margin: 30px;
+$box-per-row: 5;
+$box-width: ($pc-width / $box-per-row) - ($box-margin * 2);
+
+	.box{
+		display: inline-block;
+		vertical-align: top;
+		width: $box-width;
+		height: $box-width + 50px;
+		overflow:hidden;
+		background: white;
+		border: 2px solid lightgrey;
+		border-radius: 10px;
+		margin: $box-margin;
+		transition: all .2s ease-in;
+		box-shadow: none;
+		opacity: .8;
+	}
+
+	.box:hover{
+		opacity: 1;
+	}
+
+	.chosen-box{
+		transform: scale(1.2);
+		box-shadow: 0 0 3em white;
+		opacity: 1;
+	}
+
+	img{
+		width: 100%;
+	}
+
+	p{
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+
+	.count {
+		padding: 5px;
+		float: right;
+		color: red;
+	}
+
+	.length{
+		padding: 5px;
+		color: blue;
+		float: left;
+	}
+
+	.srcURL{
+		display: none;
+	}
+}
+

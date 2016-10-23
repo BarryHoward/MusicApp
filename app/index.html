@@ -3,14 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cool Project</title>
+    <title>Music Player</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
+
+
   <body>
-    <div class="container">
-      <p>Welcome to your life.</p>
+    <div class="player-container">
+      <img class="current-song-img" src="https://pedrocadiz13.files.wordpress.com/2014/01/default.png?w=200&h=200">
+      <div class="current-song-container">
+          <div class="current-song-info">
+            <p class="current-song-title">Choose A song</p>
+          </div>
+          <div class="player">
+            <audio class="audio-player" autoplay="true" controls="controls">
+              <source class="audio-source"></source>
+            </audio>
+          </div>
+      </div>
+    </div>
+
+    <div class="search-container">
+        <input class="search-request" type="text">
+        <button class="search-button">Search</button>
+    </div>
+      <div class="box-container">
+
     </div>
     <script src="js/bundle.js"></script>
   </body>
 </html>
+
+
+      <!-- <img class="box-background background-image" src="./autumn-forrest.jpg"> -->
