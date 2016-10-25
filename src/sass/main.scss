@@ -9,7 +9,7 @@ $body-height: 900px;
 
 body{
 	background-image: url("http://www.hdiphone6wallpapers.net/iphone-6-backgrounds/iphone-6-wallpapers-2/iphone-6-wallpapers-hd-1256pruml-1080x1920.jpg");
-	background-size: 100% auto;
+	background-size: 100% 100%;
 	background-position: 0px 100px; 
 	height: 2190px;
 }
@@ -18,56 +18,51 @@ audio{
 	width: 380px;
 }
 
-$pc-width: 1254px;
+$pc-width: 1265px;
 $pc-height: 100px;
 $search-height: 50px;
 
+.banner-container{
+	position: fixed;
+	z-index:1;
+	min-width: $pc-width;
+}
+
 .player-container{
 	width: 100%;
-	height: $pc-height;
+	min-height: $pc-height;
 	overflow: hidden;
 	position: relative;
 	padding: 0px;
 	margin: 0px;
-	position: fixed;
-	z-index:1;
 	background: black;
+	color: white;
 
 	$cs-height: $pc-height - 20px;
 	$margin: ($pc-height - $cs-height ) * 4;
 	.current-song-img{
-		position: absolute;
-		top: ($pc-height - $cs-height ) / 2;
-		left: $margin;
+		display: inline-block;
+		margin-top: ($pc-height - $cs-height ) / 2;
+		margin-left: $margin;
 		height: $cs-height;
 		width: $cs-height;
 		border: 2px solid white;
 		box-shadow: 0 0 2em white;
 	}
 
-	.current-song-container{
-		position: absolute;
-		top: ($pc-height - $cs-height ) / 2;
-		right: $margin;
-		width: $pc-width - $cs-height - $margin - $margin - 60px;
-		height: $cs-height;
-		border-radius: 50px;
-		background: black;
-		color: white;
-
 		.current-song-info{
-			// border: 3px solid white;
+			margin-top: ($pc-height - $cs-height ) / 2;
 			border-radius: 5px;
 			display: inline-block;
 			margin-right: 80px;
 			width: 450px;
-			height: 85%;
+			height: $cs-height;
 			margin-top: 4px;
 			vertical-align: top;
 			overflow-y: auto;
 			position: relative;
-			// background: white;
-			// color: black;
+			margin-left: $margin;
+			color: white;
 
 				.current-song-title{
 					padding: 0px 5px ;
@@ -88,45 +83,28 @@ $search-height: 50px;
 
 				}
 
-				// .current-song-genre{
-				// 	display: inline-block;
-				// 	position: absolute;
-				// 	left: 5px;
-				// 	width: 180px;
-
-
-				// }
-				// .current-song-count{
-				// 	display: inline-block;
-				// 	position: absolute;
-				// 	right: 5px;
-				// 	width: 180px;
-				// 	text-align: right;
-
-				// }
-
 		}
 
 		.player{
-			margin-top: ($cs-height - 40px) / 2;
+			margin-top: ($pc-height - $cs-height ) / 2 + ($cs-height - 40px) / 2;
 			width: 400px;
 			border-radius:5px;
 			background: white;
 			height:40px;
 			padding: 4px;
 			display: inline-block;
+			margin-right: $margin;
+			vertical-align: top;
 		}
-	}
+	// }
 }
 
+
 .search-container{
-	height: $search-height;
+	min-height: $search-height;
 	width: 100%;
 	overflow: hidden;
 	background: #11204D;
-	position: fixed;
-	top: $pc-height;
-	z-index: 1;
 	padding-top: 10px;
 
 	.search-bar{
@@ -212,7 +190,7 @@ $search-height: 50px;
 
 $box-margin: 30px;
 $box-per-row: 5;
-$box-width: ($pc-width / $box-per-row) - ($box-margin * 2);
+$box-width: ($pc-width / $box-per-row) - ($box-margin * 2) - 5;
 
 	.box{
 		display: inline-block;
