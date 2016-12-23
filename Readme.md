@@ -4,7 +4,7 @@ October 23, 2017
 
 [GitHub Link](https://github.com/BarryHoward/MusicApp)
 
-[Deployed on surge](tiy-barryhoward-wp4.surge.sh)
+[Deployed on surge](https://tiy-barryhoward-wp4.surge.sh)
 
 Sorting is currently working
 
