@@ -2,9 +2,9 @@ Music App -- Weekend Project 4
 
 October 23, 2017
 
-github link to project: https://github.com/BarryHoward/MusicApp
+[GitHub Link](https://github.com/BarryHoward/MusicApp)
 
-githut link to deployed website:  tiy-barryhoward-wp4.surge.sh
+[Deployed on surge](tiy-barryhoward-wp4.surge.sh)
 
 Sorting is currently working
 
